@@ -1,4 +1,4 @@
-package com.dh.grup8.IntegradorBackend.persistance.entity;
+package com.dh.grup8.IntegradorBackend.model.entity;
 
 import lombok.*;
 

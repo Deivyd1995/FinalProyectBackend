@@ -1,4 +1,4 @@
-package com.dh.grup8.IntegradorBackend.persistance.dto;
+package com.dh.grup8.IntegradorBackend.model.dto;
 
 import javax.validation.constraints.NotBlank;
 import io.swagger.v3.oas.annotations.media.Schema;
