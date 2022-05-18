@@ -6,11 +6,13 @@ import com.dh.grup8.IntegradorBackend.model.repository.ICategoryRepository;
 import com.dh.grup8.IntegradorBackend.model.service.ICategoryService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@Service
 public class CategoryService implements ICategoryService {
 
     @Autowired
