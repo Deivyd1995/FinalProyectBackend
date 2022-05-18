@@ -18,7 +18,9 @@ public class CategoryService implements ICategoryService {
     ModelMapper modelMapper;
 
     @Override
-    public CategoryDTO findById(Integer id) {
+    public CategoryDTO findById(Long id) {
+        CategoryDTO response = null;
+        Category category = categoryRepository.findById(id).get();
         return null;
     }
 
@@ -28,7 +30,7 @@ public class CategoryService implements ICategoryService {
     }
 
     @Override
-    public void deleteById(Integer id) {
+    public void deleteById(Long id) {
 
     }
 
