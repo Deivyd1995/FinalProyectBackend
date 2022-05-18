@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CategoryDto {
+public class CategoryDTO {
 
     private Long id;
     @Schema(example = "Deptos", required = true)
@@ -20,6 +20,6 @@ public class CategoryDto {
     @NotBlank(message = "ImageURL can't be blank")
     private String urlImage;
 
-    public CategoryDto() {
+    public CategoryDTO() {
     }
 }
