@@ -4,9 +4,11 @@ import com.dh.grup8.IntegradorBackend.model.dto.CategoryDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Optional;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,6 +27,7 @@ class CategoryServiceTest {
     @BeforeEach
     public void prepararTest() {
         categoryDTO = new CategoryDTO();
+        categoryDTO.setId(1L);
         categoryDTO.setTitle("Title Test");
         categoryDTO.setDescription("Description Test");
         categoryDTO.setUrlImage("UrlImage Test");
@@ -50,8 +53,8 @@ class CategoryServiceTest {
     @Test
     void deleteById() {
         Long idToSearch = categoryDTO.getId();
-        categoryService.deleteById(categoryDTO.getId());
-        assertNull(categoryService.findById(idToSearch));
+        categoryService.deleteById(idToSearch);
+        assertTrue(categoryService.findAll().size()<=1);
     }
 
     @Test
