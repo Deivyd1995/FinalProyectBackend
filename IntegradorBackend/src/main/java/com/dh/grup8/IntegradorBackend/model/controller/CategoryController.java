@@ -35,9 +35,16 @@ public class CategoryController {
         return new ResponseEntity<Set<CategoryDTO>>(categoryDTOList, HttpStatus.OK);
     }
 
+    @PutMapping("/update")
     public ResponseEntity<?> update(@Valid @RequestBody CategoryDTO categoryDTO){
         categoryService.update(categoryDTO);
         return new ResponseEntity<CategoryDTO>(categoryDTO, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/categoryId")
+    public ResponseEntity<?> delete(@PathVariable Long categoryId){
+        categoryService.deleteById(categoryId);
+        return new ResponseEntity<>("Category with id: "+ categoryId + " is delete", HttpStatus.OK);
     }
 
 }
