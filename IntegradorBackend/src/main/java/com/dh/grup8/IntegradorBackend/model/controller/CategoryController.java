@@ -20,28 +20,28 @@ public class CategoryController {
     @PostMapping("/save")
     public ResponseEntity<?> search(@Valid @RequestBody CategoryDTO categoryDTO){
         categoryService.create(categoryDTO);
-        return new ResponseEntity<CategoryDTO>(categoryDTO, HttpStatus.CREATED);
+        return new ResponseEntity<>(categoryDTO, HttpStatus.CREATED);
     }
 
     @GetMapping("/id/{categoryId}")
     public ResponseEntity<?> findByID(@PathVariable Long categoryId){
         CategoryDTO categoryDTO = categoryService.findById(categoryId);
-        return new ResponseEntity<CategoryDTO>(categoryDTO, HttpStatus.OK);
+        return new ResponseEntity<>(categoryDTO, HttpStatus.OK);
     }
 
     @GetMapping("/viewAll")
     public ResponseEntity<?> findAll(){
         Set<CategoryDTO> categoryDTOList=categoryService.findAll();
-        return new ResponseEntity<Set<CategoryDTO>>(categoryDTOList, HttpStatus.OK);
+        return new ResponseEntity<>(categoryDTOList, HttpStatus.OK);
     }
 
     @PutMapping("/update")
     public ResponseEntity<?> update(@Valid @RequestBody CategoryDTO categoryDTO){
         categoryService.update(categoryDTO);
-        return new ResponseEntity<CategoryDTO>(categoryDTO, HttpStatus.OK);
+        return new ResponseEntity<>(categoryDTO, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/categoryId")
+    @DeleteMapping("/delete/{categoryId}")
     public ResponseEntity<?> delete(@PathVariable Long categoryId){
         categoryService.deleteById(categoryId);
         return new ResponseEntity<>("Category with id: "+ categoryId + " is delete", HttpStatus.OK);
